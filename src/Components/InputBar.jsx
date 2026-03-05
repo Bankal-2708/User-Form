@@ -11,7 +11,7 @@ function InputBar({users, setUsers}) {
 
     const handleSubmit = () => {
 
-        const userExists = users.some((user) => user.email === email); // chek if email alredy saves
+        const userExists = users.some((user) => user.email === email); // check if email alredy saves
 
         if (userExists) {
             alert("User already exists with this email!");
@@ -27,7 +27,7 @@ function InputBar({users, setUsers}) {
         setUsers((prev) => [...prev, newUser]);
 
 
-        setName(""); // these will clear input fileds after clicking on submit btn or press enter 
+        setName(""); // these will clear input fields after clicking on submit button or press enter 
         setEmail("");
         setPassword("");
 
@@ -94,8 +94,8 @@ function InputBar({users, setUsers}) {
                     >
                         Admin Pannel
                     </button>
+
                 </div>
-                
                 
             </div>
         </div>

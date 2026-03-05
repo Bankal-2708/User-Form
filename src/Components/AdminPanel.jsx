@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
 function AdminPanel({ users, setUsers }) {
 
@@ -8,9 +9,11 @@ function AdminPanel({ users, setUsers }) {
         localStorage.setItem("users", JSON.stringify(updateUser));
     }
 
+    const navigate = useNavigate();
+
     return (
         <div className="max-w-xl mx-auto mt-10 bg-gray-100 p-6 rounded-xl shadow-lg">
-            
+
             <h2 className="text-2xl font-bold text-center mb-6 text-gray-800">
                 Admin Panel
             </h2>
@@ -38,9 +41,18 @@ function AdminPanel({ users, setUsers }) {
                         >
                             Delete
                         </button>
+
                     </div>
                 ))
             )}
+            <div className="flex justify-center mt-4">
+                <button
+                    onClick={() => navigate('/')}
+                    className="bg-blue-500 text-white py-2 px-10 rounded-lg hover:bg-blue-600"
+                >
+                    Back
+                </button>
+            </div>
         </div>
     )
 }
