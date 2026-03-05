@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
-function InputBar() {
+function InputBar({users, setUsers}) {
 
-    const [users, setUsers] = useState(() => {
-        const savedUsers = localStorage.getItem("users");
-        return savedUsers ? JSON.parse(savedUsers) : [];
-    });
+   const navigate = useNavigate();
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -29,7 +27,7 @@ function InputBar() {
         setUsers((prev) => [...prev, newUser]);
 
 
-        setName("");// these will clear input fileds after clicking on submit btn or press enter
+        setName(""); // these will clear input fileds after clicking on submit btn or press enter 
         setEmail("");
         setPassword("");
 
@@ -89,16 +87,16 @@ function InputBar() {
                     >
                         Submit
                     </button>
-                </div>
 
-                {/* <ul className="mt-6">
-                    {users.map((user, index) => (
-                        <li key={index} className="border p-2 mt-2 rounded">
-                            <p><b>Name:</b> {user.name}</p>
-                            <p><b>Email:</b> {user.email}</p>
-                        </li>
-                    ))}
-                </ul> */}
+                    <button
+                    onClick={()=>navigate('ap')}
+                    className="bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600"
+                    >
+                        Admin Pannel
+                    </button>
+                </div>
+                
+                
             </div>
         </div>
     )
