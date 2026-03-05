@@ -5,17 +5,17 @@ import { Route, Routes } from 'react-router-dom';
 
 function App() {
 
-   const [users, setUsers] = useState(() => {
-          const savedUsers = localStorage.getItem("users");
-          return savedUsers ? JSON.parse(savedUsers) : [];
-      });
-      
+  const [users, setUsers] = useState(() => {
+    const savedUsers = localStorage.getItem("users");
+    return savedUsers ? JSON.parse(savedUsers) : [];
+  });
+
 
   return (
     <div>
       <Routes>
-        <Route path='/' element={<InputBar users={users} setUsers={setUsers} />}/>
-        <Route path='/ap' element={<AdminPanel users={users} setUsers={setUsers} />} />
+        <Route path='/' element={<InputBar users={users} setUsers={setUsers} />} />
+        <Route path='/AdminPanel' element={<AdminPanel users={users} setUsers={setUsers} />} />
       </Routes>
     </div>
   )

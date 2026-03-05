@@ -89,7 +89,7 @@ function InputBar({users, setUsers}) {
                     </button>
 
                     <button
-                    onClick={()=>navigate('ap')}
+                    onClick={()=>navigate('AdminPanel')}
                     className="bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600"
                     >
                         Admin Pannel
